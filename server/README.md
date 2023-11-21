@@ -1,16 +1,16 @@
 # Bulletin Board Server
 
-이 프로젝트는 Express 및 MySQL을 사용하여 만든 게시판 웹 애플리케이션의 서버 부분입니다.
+This project represents the server portion of a bulletin board web application created using Express and MySQL.
 
-## 주요 파일
+## Key Files
 
 ### `app.js`
 
-Express 애플리케이션의 진입점 파일입니다. 라우팅 및 MySQL 연결 등 서버의 주요 기능을 설정합니다.
+The entry point file for the Express application. It configures the main server functionalities such as routing and MySQL connection.
 
-### MySQL 데이터베이스 연결 정보
+## MySQL Database Connection Information
 
-MySQL 데이터베이스에 연결하기 위한 정보가 `app.js` 파일에 하드코딩되어 있습니다. 필요에 따라 수정하세요.
+Connection information for the MySQL database is hardcoded in the `app.js` file. Modify it as needed.
 
 ```bash
 host: "localhost",
@@ -20,13 +20,13 @@ password: "*******",
 database: "boardsystem"
 ```
 
-#### DB Table 정보
+### DB Table Information
 
 ## `SQL`
 CREATE DATABASE `boardsystem` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 # `board`
-id(PK),title,content,images1,images2,images3
+id(PK), title, content, images1, images2, images3
 
 ## `SQL`
 CREATE TABLE `board` (
@@ -41,7 +41,7 @@ CREATE TABLE `board` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 # `member`
-username(PK),password,email
+username(PK), password, email
 
 ## `SQL`
 CREATE TABLE `member` (
@@ -51,38 +51,38 @@ CREATE TABLE `member` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-### 라우트
+## Routes
 
-- `/member` (POST): 새로운 회원을 추가합니다.
-- `/login` (POST): 사용자 로그인을 처리합니다.
-- `/posts`: 모든 게시글을 반환합니다.
-- `/posts` (POST): 새로운 게시글을 추가합니다.
-- `/posts/:id` (PUT): 특정 ID의 게시글을 수정합니다.
-- `/posts/:id` (DELETE): 특정 ID의 게시글을 삭제합니다.
+- `/member` (POST): Adds a new member.
+- `/login` (POST): Handles user login.
+- `/posts`: Returns all posts.
+- `/posts` (POST): Adds a new post.
+- `/posts/:id` (PUT): Modifies a post with a specific ID.
+- `/posts/:id` (DELETE): Deletes a post.
 
-### 이미지 업로드
+## Image Upload
 
-게시글에 이미지를 업로드하면 `uploads` 폴더에 저장됩니다.
+When uploading images for a post, they are stored in the `uploads` folder.
 
-## 사용된 라이브러리
+## Used Libraries
 
-- **Express**: Node.js 웹 애플리케이션을 위한 웹 프레임워크입니다.
-- **cors**: CORS (Cross-Origin Resource Sharing)를 활성화하기 위한 미들웨어입니다.
-- **mysql2**: MySQL 데이터베이스와의 연결을 위한 드라이버입니다.
-- **multer**: 파일 업로드를 위한 미들웨어입니다.
-- **body-parser**: HTTP 요청 본문을 파싱하기 위한 미들웨어입니다.
-- **fs**: 파일 시스템과 상호작용하기 위한 Node.js 모듈입니다.
+- **Express**: A web framework for Node.js applications.
+- **cors**: Middleware to enable CORS (Cross-Origin Resource Sharing).
+- **mysql2**: MySQL driver for database connection.
+- **multer**: Middleware for file uploads.
+- **body-parser**: Middleware for parsing HTTP request bodies.
+- **fs**: Node.js module for interacting with the file system.
 
-## 프로젝트 설정 및 실행
+## Project Setup and Execution
 
-1. 프로젝트 폴더로 이동하여 의존성 설치 및 실행:
+1. Navigate to the project folder, install dependencies, and run:
 
 ```bash
 npm install
 node app.js
 ```
 
-2. 호스트와 포트 설정:
+2. Configure host and port:
 
 # `.env`
 
@@ -97,5 +97,4 @@ REACT_APP_DB_USER= "root",
 REACT_APP_DB_PW= "****",
 REACT_APP_DB_SCHEMA= "boardsystem"
 
-### 서버/DB IP와 PORT 및 로그인 정보 작성하여 환경변수화
-### PW의 "****"에는 비밀번호 입력
+### Set server/DB IP and PORT, and login information as environment ### variables. Enter the password in place of "****" in PW.
