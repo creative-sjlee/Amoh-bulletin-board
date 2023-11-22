@@ -51,6 +51,10 @@ CREATE TABLE `member` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+## `admin insert`
+INSERT INTO `boardsystem`.`member`
+VALUES ("admin", "1234", "1@2.3");
+
 ## Routes
 
 - `/member` (POST): Adds a new member.
