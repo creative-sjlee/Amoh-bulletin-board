@@ -54,6 +54,7 @@ export default function Accordion({
     );
   }
 
+
   return (
     <BootstrapAccordion defaultActiveKey="">
       <Card ref={accordionRef}>
@@ -67,14 +68,16 @@ export default function Accordion({
         </Card.Header>
         <BootstrapAccordion.Collapse eventKey="0">
           <Card.Body>
-            <div className="button-container">
-              <Button variant="outline-secondary" onClick={handleUpdate} size="sm">
-                Update
-              </Button>
-              <Button variant="outline-secondary" onClick={handleDelete} size="sm">
-                Delete
-              </Button>
-            </div>
+            {onUpdate && onDelete && (
+              <div className="button-container">
+                <Button variant="outline-secondary" onClick={handleUpdate} size="sm">
+                  Update
+                </Button>
+                <Button variant="outline-secondary" onClick={handleDelete} size="sm">
+                  Delete
+                </Button>
+              </div>
+            )}
             <h3>{content}</h3>
             {images.map((image, index) => (
               <img

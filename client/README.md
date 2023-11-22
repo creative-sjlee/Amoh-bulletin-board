@@ -15,6 +15,9 @@ A React component handling the registration page. It takes user input for the us
 ### `pages/PostList.jsx`
 A React component responsible for displaying the list of posts and handling the creation, modification, and deletion of posts. It also provides a logout feature.
 
+### `pages/Board.jsx`
+A React component responsible for displaying the list of posts. It also provides a login feature.
+
 ### `component/PostListItem.jsx`
 A component that displays each post in the post list.
 

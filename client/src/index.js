@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Login from "./pages/Login";
+import Board from "./pages/Board";
 import Members from "./pages/Members";
 import PostList from "./pages/PostList";
 import reportWebVitals from "./reportWebVitals";
@@ -13,7 +14,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
-  { index: true, path: "/", element: <Login/>, errorElement: <p>Not found</p> },
+  { index: true, path: "/", element: <Board/>, errorElement: <p>Not found</p> },
+  { path: "/login", element: <Login/> },
   { path: "/Members", element: <Members/> },
   { path: "/PostList", element: <PostList/>}
 ]);
