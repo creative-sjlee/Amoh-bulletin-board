@@ -54,7 +54,7 @@ or
 ### For mobile testing, use the current local IP as the host
 ### Ensure that both devices are on the same network for mobile testing
 
-# `.env
+# `.env`
 
 REACT_APP_SERVER_URL='http://192.168.35.136:4000'
 
